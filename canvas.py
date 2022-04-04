@@ -3,6 +3,7 @@ import cv2
 import pandas as pd
 import time
 import os
+import torch
 
 
 def create_canvas(background_path):
@@ -34,11 +35,13 @@ def draw(x, y, b, g, r, length, height, background):
 def random_color():
     import random
     rand = random.randrange(0,20)
+    # color for 20 gradients
     color = [(0, 255, 0), (78, 247, 0), (109, 238, 0), (131, 230, 0), (149, 221, 0), (164, 212, 0), 
     (178, 202, 0), (190, 192, 0), (200, 182, 0), (210, 172, 0), (219, 161, 0), (227, 150, 0), (233, 138, 0), (239, 126, 0),
     (244, 112, 0), (248, 99, 0), (252, 83, 0), (254, 66, 0), (255, 44, 0), (255, 0, 0)]
     return color[rand]
 
+# test the function of generate color using provided data
 def color_generate(data):
     np.random.rand(42)
     weight = np.random.rand(8,30)
