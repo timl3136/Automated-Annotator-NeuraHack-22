@@ -64,8 +64,10 @@ if __name__ == "__main__":
     image_list = [os.path.join('pic', p) for p in os.listdir('pic')]
     print(image_list)
     row_idx = 0
-
+    iii = 0
     for image in (image_list):
+        if iii >= 3:
+            break
         temp_canvas = create_canvas(image)
         x, y = 0,0
         canvas_size = temp_canvas.shape
@@ -88,6 +90,7 @@ if __name__ == "__main__":
         cv2.waitKey(1)
         time.sleep(10)
         cv2.destroyAllWindows()
+        iii += 1
 
     # test_canvas.close()
     
